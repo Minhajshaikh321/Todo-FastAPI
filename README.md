@@ -20,7 +20,6 @@ A simple **Todo CRUD API** built with **FastAPI** and **SQLAlchemy**, created to
 
 2️⃣ Create virtual environment & activate it
 python -m venv venv
-# Windows
 venv\Scripts\activate
 
 ## ⚙️ Tech Stack
@@ -30,12 +29,14 @@ venv\Scripts\activate
 - **SQLite** - Database
 
 3️⃣ Install dependencies
+
 pip install -r requirements.txt
 
 4️⃣ Run the application
+
 uvicorn main:app --reload
 
-# 📚 Learning Goals
+## 📚 Learning Goals
 
 1)Understanding FastAPI request/response flow
 2)Using Pydantic models for validation
