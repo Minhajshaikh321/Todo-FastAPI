@@ -14,8 +14,11 @@ A simple **Todo CRUD API** built with **FastAPI** and **SQLAlchemy**, created to
 
 ## 📂 Project Structure
 │── app.py # Main FastAPI application
+
 │── database.db # SQLite database file (auto-generated)
+
 │── requirements.txt # Python dependencies
+
 │── README.md # Project documentation
 
 2️⃣ Create virtual environment & activate it
@@ -39,9 +42,13 @@ uvicorn main:app --reload
 ## 📚 Learning Goals
 
 1)Understanding FastAPI request/response flow
+
 2)Using Pydantic models for validation
+
 3)Working with SQLAlchemy ORM
+
 4)Handling CRUD operations
+
 5)Returning proper HTTP status codes & exceptions
 
 5️⃣ Access Swagger UI
