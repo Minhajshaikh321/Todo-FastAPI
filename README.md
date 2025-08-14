@@ -3,7 +3,7 @@
 A simple **Todo CRUD API** built with **FastAPI** and **SQLAlchemy**, created to practice and improve FastAPI skills.
 
 ---
-## 1️⃣ Features ans project structure
+## 1️⃣ Features and project structure
 
 - Create a new Todo
 - Get all Todos
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 4️⃣ Run the application
 
-uvicorn main:app --reload
+uvicorn app:app --reload
 
 ## 📚 Learning Goals
 
@@ -57,4 +57,4 @@ It allows you to test all endpoints directly in your browser without needing Pos
 
 **URL:** [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
-You can execute API requests (GET, POST, PUT, DELETE) and view responses in real time.
+Can execute API requests (GET, POST, PUT, DELETE) and view responses in real time.
