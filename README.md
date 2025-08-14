@@ -3,7 +3,7 @@
 A simple **Todo CRUD API** built with **FastAPI** and **SQLAlchemy**, created to practice and improve FastAPI skills.
 
 ---
-## 1️⃣ Features and project structure
+1️⃣ Features and project structure
 
 - Create a new Todo
 - Get all Todos
@@ -22,7 +22,9 @@ A simple **Todo CRUD API** built with **FastAPI** and **SQLAlchemy**, created to
 │── README.md # Project documentation
 
 2️⃣ Create virtual environment & activate it
+
 python -m venv venv
+
 venv\Scripts\activate
 
 ## ⚙️ Tech Stack
