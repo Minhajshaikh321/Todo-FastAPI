@@ -1,0 +1,25 @@
+[Client/Postman] --(POST /todos/ with JSON body)--> [FastAPI App]
+
+   FastAPI:
+      1. Matches route `/todos/` with POST method
+      2. Parses JSON body into `TodoCreate` Pydantic model
+      3. Calls `CreateTodo()` function
+          └── Parameter `db: Session = Depends(get_db)`
+                → FastAPI runs `get_db()` generator
+                → Creates a new SQLAlchemy Session
+                → Passes `db` session object into `CreateTodo()`
+
+   CreateTodo():
+      4. Converts validated Pydantic model → SQLAlchemy `Todo` object
+      5. `db.add(todo)` → Stage the object for insert
+      6. `db.commit()` → Write changes to the database
+      7. `db.refresh(todo)` → Reload with database-generated fields (`id`, `date_created`)
+      8. Returns `todo` object
+
+   Response:
+      9. FastAPI serializes `todo` → `TodoResponse` model
+     10. Sends JSON response back to client
+
+[Database] <--- SQLAlchemy executes INSERT query --- [SQLAlchemy ORM]
+
+[Client/Postman/Swagger UI] <-- JSON response (created todo with id & date) -- FastAPI

@@ -1,0 +1,36 @@
+   Client Sends Request
+           |
+           v
+ ┌─────────────────────┐
+ |   FastAPI Router     |
+ └─────────────────────┘
+           |
+           v
+  See function signature:
+  def CreateTodo(todo, db: Session = Depends(get_db))
+           |
+           v
+   ┌──────────────────┐
+   |  Call get_db()   |  ← Dependency Injection
+   └──────────────────┘
+           |
+           v
+  ┌─────────────────────────┐
+  | db = SessionLocal()     |  ← Create SQLAlchemy session
+  | yield db                |  ← Give session to route
+  └─────────────────────────┘
+           |
+           v
+ ┌─────────────────────────────────┐
+ | Run the endpoint code with `db` |
+ | Example: db.add(todo), db.query |
+ └─────────────────────────────────┘
+           |
+           v
+ ┌─────────────────────────────┐
+ | Request finished → finally: |
+ | db.close()                  |  ← Close DB connection
+ └─────────────────────────────┘
+           |
+           v
+     Response Sent to Client
